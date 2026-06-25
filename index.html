@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Резюме Екатерины Дружинской: аналитик, 1С, бизнес-анализ, BI, SQL, Python, Excel и портфолио аналитических проектов.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2319211f'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='20' font-weight='700' fill='%23fffdf8'%3E%D0%95%D0%94%3C/text%3E%3C/svg%3E">
+  <title>Дружинская Екатерина / Druzhinskaya Ekaterina · resume</title>
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --paper: #fffdf8;
+      --ink: #19211f;
+      --muted: #66716c;
+      --line: #ddd7ca;
+      --teal: #0c776f;
+      --teal-dark: #07534e;
+      --coral: #d35f4b;
+      --amber: #d69a24;
+      --blue: #2f5f91;
+      --shadow: 0 18px 50px rgba(25, 33, 31, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(221, 215, 202, 0.84);
+      background: rgba(247, 243, 236, 0.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 212px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      padding: 9px 11px;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: var(--paper);
+      color: var(--ink);
+      outline: none;
+    }
+
+    .hero {
+      padding: 72px 0 46px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 540px;
+      padding: 20px 0;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--coral);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 790px;
+      margin-bottom: 20px;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 700px;
+      margin-bottom: 28px;
+      color: #39433f;
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      font-weight: 850;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(25, 33, 31, 0.13);
+      outline: none;
+    }
+
+    .button.primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button.secondary {
+      background: transparent;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 690px;
+    }
+
+    .metric {
+      min-height: 116px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.68);
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      min-height: 540px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .visual-top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .visual-tile {
+      min-height: 126px;
+      padding: 18px;
+      background: var(--paper);
+    }
+
+    .visual-tile b {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .bar {
+      display: block;
+      height: 9px;
+      margin-bottom: 9px;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+
+    .bar:nth-of-type(2) {
+      width: 76%;
+      background: var(--amber);
+    }
+
+    .bar:nth-of-type(3) {
+      width: 58%;
+      background: var(--coral);
+    }
+
+    .visual-main {
+      display: grid;
+      flex: 1;
+      align-items: end;
+      padding: 24px;
+      background:
+        linear-gradient(120deg, rgba(12, 119, 111, 0.11), transparent 55%),
+        linear-gradient(35deg, rgba(211, 95, 75, 0.1), transparent 48%),
+        var(--paper);
+    }
+
+    .dashboard-shot {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .dashboard-shot img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: top left;
+    }
+
+    .caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(260px, 0.54fr);
+      gap: 26px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .profile-band {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+    }
+
+    .profile-panel {
+      padding: 26px;
+      background: var(--paper);
+    }
+
+    .profile-panel h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .profile-panel p {
+      margin-bottom: 0;
+      color: #3f4844;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fbf8f0;
+      color: #39433f;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 4px 0 22px;
+    }
+
+    .filter {
+      min-height: 40px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .filter.is-active {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 10px 28px rgba(25, 33, 31, 0.06);
+    }
+
+    .project[hidden] {
+      display: none;
+    }
+
+    .project-media {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .project-media img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: top left;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover .project-media img {
+      transform: scale(1.025);
+    }
+
+    .project-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 22px;
+    }
+
+    .project-kicker {
+      margin-bottom: 10px;
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .project h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      line-height: 1.16;
+    }
+
+    .project p {
+      color: #46504c;
+    }
+
+    .project-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: auto 0 18px;
+    }
+
+    .project-stat {
+      min-height: 74px;
+      padding: 12px;
+      border-left: 3px solid var(--teal);
+      background: #f8f5ee;
+    }
+
+    .project-stat:nth-child(2) {
+      border-left-color: var(--coral);
+    }
+
+    .project-stat b {
+      display: block;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .project-stat span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .text-link:hover,
+    .text-link:focus-visible {
+      border-color: var(--ink);
+      outline: none;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: minmax(270px, 0.42fr) 1fr;
+      gap: 18px;
+    }
+
+    .resume-card,
+    .timeline {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .resume-card {
+      padding: 24px;
+    }
+
+    .resume-card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .resume-card p {
+      color: var(--muted);
+    }
+
+    .resume-card ul,
+    .timeline ul {
+      margin: 0;
+      padding-left: 19px;
+    }
+
+    .resume-card li,
+    .timeline li {
+      margin-bottom: 9px;
+    }
+
+    .timeline {
+      padding: 8px 24px 24px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 168px 1fr;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .timeline-date {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .timeline h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .quote-band {
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .quote-band p {
+      max-width: 880px;
+      margin-bottom: 20px;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    .quote-band span {
+      color: #cbd4ce;
+      font-weight: 750;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .contact h2 {
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 22px 0 38px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .hero-grid,
+      .section-head,
+      .profile-band,
+      .projects,
+      .experience,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-visual {
+        min-height: auto;
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .shell {
+        width: min(100% - 22px, 1160px);
+      }
+
+      .hero {
+        padding-bottom: 28px;
+      }
+
+      section {
+        padding: 38px 0;
+      }
+
+      .visual-top,
+      .project-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-tile {
+        min-height: 96px;
+      }
+
+      .project-body,
+      .profile-panel,
+      .resume-card,
+      .timeline,
+      .quote-band,
+      .contact {
+        padding: 20px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .caption {
+        flex-direction: column;
+      }
+
+      .button,
+      .text-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="К началу страницы">
+        <span class="brand-mark">ЕД</span>
+        <span>Екатерина Дружинская</span>
+      </a>
+      <nav class="nav-links" aria-label="Главная навигация">
+        <a href="#profile">Профиль</a>
+        <a href="#projects">Проекты</a>
+        <a href="#resume">Резюме</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Analyst / 1С / Business Processes / BI</p>
+          <h1>Аналитик, который переводит бизнес-задачи в данные, требования и понятные решения.</h1>
+          <p class="lead">Работаю на стыке отчетности, 1С, бизнес-процессов и управленческой аналитики: структурирую данные, описываю требования, проверяю качество выгрузок и собираю понятные артефакты для бизнеса и команды разработки.</p>
+          <div class="actions">
+            <a class="button primary" href="#projects">Смотреть проекты</a>
+            <a class="button secondary" href="https://github.com/comfe2436-web/analytics-portfolio" target="_blank" rel="noreferrer">GitHub портфолио</a>
+            <a class="button secondary" href="#contact">Связаться</a>
+          </div>
+          <div class="hero-metrics" aria-label="Ключевые показатели портфолио">
+            <div class="metric">
+              <strong>4</strong>
+              <span>законченных аналитических кейса</span>
+            </div>
+            <div class="metric">
+              <strong>4+ года</strong>
+              <span>работа с данными, документами и процессами</span>
+            </div>
+            <div class="metric">
+              <strong>Excel + 1С</strong>
+              <span>отчетность, проверки данных и автоматизация</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Визуальная сводка портфолио">
+          <div class="visual-top">
+            <div class="visual-tile">
+              <b>SQL</b>
+              <span class="bar" style="width: 92%"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <div class="visual-tile">
+              <b>BI</b>
+              <span class="bar" style="width: 84%"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <div class="visual-tile">
+              <b>1С</b>
+              <span class="bar" style="width: 78%"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+          <div class="visual-main">
+            <div class="dashboard-shot">
+              <img src="portfolio-projects/03-sales-feedback-python-analytics/screenshots/00_executive_dashboard.svg" alt="Управленческий дашборд проекта Customer Feedback & Sales Analytics">
+              <div class="caption">
+                <span>Customer Feedback & Sales Analytics</span>
+                <span>Python / pandas / управленческие выводы</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Профиль</h2>
+          <p>Портфолио показывает полный аналитический цикл: понять задачу, описать процесс, проверить данные, подготовить отчетность и сформулировать решение для руководителя или команды разработки.</p>
+        </div>
+        <div class="profile-band">
+          <article class="profile-panel">
+            <h3>Что делаю</h3>
+            <p>Разбираю бизнес-контекст, фиксирую требования, строю AS-IS/TO-BE процессы, проектирую отчеты, нахожу проблемы в данных и формулирую рекомендации. Есть опыт работы с 1С, Excel-отчетностью, документами и пользователями.</p>
+            <div class="skills" aria-label="Навыки">
+              <span class="skill">BPMN</span>
+              <span class="skill">Требования</span>
+              <span class="skill">RTM</span>
+              <span class="skill">ТЗ</span>
+              <span class="skill">1С</span>
+              <span class="skill">Excel</span>
+              <span class="skill">Пользователи</span>
+            </div>
+          </article>
+          <article class="profile-panel">
+            <h3>Чем полезна бизнесу</h3>
+            <p>Помогаю видеть не только цифры, но и причины: где теряются заявки, почему появляются ошибки в выгрузках, какие операции требуют ручной работы и какие показатели стоит вынести в регулярный контроль.</p>
+            <div class="skills" aria-label="Инструменты">
+              <span class="skill">SQL</span>
+              <span class="skill">Сводные таблицы</span>
+              <span class="skill">Python</span>
+              <span class="skill">BPMN</span>
+              <span class="skill">BI</span>
+              <span class="skill">Документооборот</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Проекты</h2>
+          <p>Каждый кейс оформлен как рабочий материал: бизнес-проблема, KPI, данные, артефакты, выводы и рекомендации.</p>
+        </div>
+        <div class="filters" aria-label="Фильтр проектов">
+          <button class="filter is-active" type="button" data-filter="all">Все</button>
+          <button class="filter" type="button" data-filter="business">Бизнес-анализ</button>
+          <button class="filter" type="button" data-filter="data">Данные</button>
+          <button class="filter" type="button" data-filter="bi">BI / SQL</button>
+        </div>
+
+        <div class="projects">
+          <article class="project" data-tags="data business">
+            <div class="project-media">
+              <img src="portfolio-projects/01-data-quality-excel-reporting/screenshots/05_dashboard.png" alt="Excel-дашборд контроля качества данных">
+            </div>
+            <div class="project-body">
+              <div class="project-kicker">Excel / выгрузки 1С / качество данных</div>
+              <h3>Контроль качества выгрузок из 1С</h3>
+              <p>Контроль качества выгрузок из 1С: дубли, пропуски, связи между таблицами, некорректные суммы, статусы и даты. Итог - формульный Excel-отчет, реестр ошибок и план исправлений.</p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <b>326</b>
+                  <span>проверяемых записей</span>
+                </div>
+                <div class="project-stat">
+                  <b>24</b>
+                  <span>события ошибок</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <a class="text-link" href="portfolio-projects/01-data-quality-excel-reporting/README.md">README</a>
+                <a class="text-link" href="portfolio-projects/01-data-quality-excel-reporting/result/data_quality_report.xlsx">Excel-отчет</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-tags="business">
+            <div class="project-media">
+              <img src="portfolio-projects/02-bpmn-1c-requirements/03-bpmn/to-be.svg" alt="TO-BE BPMN процесс обработки заявок">
+            </div>
+            <div class="project-body">
+              <div class="project-kicker">BPMN / 1С / требования</div>
+              <h3>Автоматизация обработки заявок в 1С</h3>
+              <p>Автоматизация обработки клиентских заявок в 1С: AS-IS, анализ первопричин, TO-BE, требования, RTM, макет формы, ТЗ, критерии приемки и тестовые сценарии.</p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <b>200</b>
+                  <span>заявок в день в бизнес-кейсе</span>
+                </div>
+                <div class="project-stat">
+                  <b>3 дня</b>
+                  <span>исходное время обработки</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <a class="text-link" href="portfolio-projects/02-bpmn-1c-requirements/README.md">README</a>
+                <a class="text-link" href="portfolio-projects/02-bpmn-1c-requirements/06-specification/technical-specification.md">ТЗ</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-tags="data bi">
+            <div class="project-media">
+              <img src="portfolio-projects/03-sales-feedback-python-analytics/screenshots/04_priority_matrix.svg" alt="Матрица приоритетов по продуктам и обратной связи">
+            </div>
+            <div class="project-body">
+              <div class="project-kicker">Python / pandas / клиентский опыт</div>
+              <h3>Аналитика продаж и клиентской обратной связи</h3>
+              <p>Исследование продаж и клиентской обратной связи: очистка данных, расчет NPS и операционных метрик, проверка гипотез, поиск проблемных категорий и рекомендаций для отдела продаж.</p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <b>4 995</b>
+                  <span>заказов и отзывов</span>
+                </div>
+                <div class="project-stat">
+                  <b>635,5 млн</b>
+                  <span>рублей выручки</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <a class="text-link" href="portfolio-projects/03-sales-feedback-python-analytics/README.md">README</a>
+                <a class="text-link" href="portfolio-projects/03-sales-feedback-python-analytics/notebooks/sales_feedback_analysis.ipynb">Ноутбук</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-tags="bi data">
+            <div class="project-media">
+              <img src="portfolio-projects/04-sql-bi-dashboard/screenshots/dashboard.svg" alt="SQL и BI дашборд продаж">
+            </div>
+            <div class="project-body">
+              <div class="project-kicker">SQL / SQLite / BI-дашборд</div>
+              <h3>SQL-анализ продаж и BI-дашборд</h3>
+              <p>SQL-анализ продаж интернет-магазина: модель данных, SQLite-база, JOIN, CTE, агрегации, KPI по выручке, маржинальности и дебиторской задолженности, BI-спецификация.</p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <b>1 660</b>
+                  <span>заказов в модели</span>
+                </div>
+                <div class="project-stat">
+                  <b>152,4 млн</b>
+                  <span>рублей выручки</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <a class="text-link" href="portfolio-projects/04-sql-bi-dashboard/README.md">README</a>
+                <a class="text-link" href="portfolio-projects/04-sql-bi-dashboard/dashboard/index.html">BI-прототип</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Резюме</h2>
+          <p>Короткая версия для рекрутера: актуальный опыт, стек, образование и формат работы. Проекты выше показывают, как эти навыки выглядят в артефактах.</p>
+        </div>
+        <div class="experience">
+          <aside class="resume-card">
+            <h3>Стек и формат</h3>
+            <ul>
+              <li>Excel: формулы, ВПР / XLOOKUP, сводные таблицы, макросы</li>
+              <li>1С: выгрузка, проверка и подготовка данных</li>
+              <li>Бизнес-анализ: BPMN, требования, ТЗ, описание процессов</li>
+              <li>SQL и Python: базовый уровень для анализа таблиц</li>
+              <li>Формат: удаленно / гибрид, готова к командировкам</li>
+            </ul>
+          </aside>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">Дек 2025 - апр 2026</div>
+              <div>
+                <h3>Ведущий аналитик · ГАУ ИТЦ "Соцзащита" Москвы</h3>
+                <p>Сбор, обработка и структурирование данных, подготовка отчетов и визуализаций, автоматизация отчетности в Excel, работа с данными в 1С и контроль качества данных.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">Янв 2022 - фев 2026</div>
+              <div>
+                <h3>Администратор · ИП Дружинская</h3>
+                <p>Работа с большим объемом документов и данных, оцифровка и структурирование информации, актуализация баз данных, контроль корректности данных, отчеты и сводные таблицы.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">Май 2024 - окт 2024</div>
+              <div>
+                <h3>Трансферный гид · Fit Holidays</h3>
+                <p>Координация логистики, анализ обратной связи клиентов, выявление повторяющихся проблем и подготовка предложений по улучшению качества сервиса.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">Образование</div>
+              <div>
+                <h3>МФЮА · РЭУ им. Г.В. Плеханова</h3>
+                <p>Магистратура по юриспруденции, правовое обеспечение бизнеса, 2025-2028. Бакалавриат по менеджменту, управление гостиничным и туристическим бизнесом, 2021-2025. Курс: разработка алгоритмов и программных приложений.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="quote-band">
+          <p>Мне близка аналитика, в которой результат можно открыть, проверить и использовать: таблица считает, требования объясняют задачу, BPMN показывает процесс, а отчет помогает принять решение.</p>
+          <span>Проекты построены на синтетических данных и оформлены как рабочие материалы для внутренних бизнес-задач.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="shell">
+        <div class="contact">
+          <div>
+            <h2>Контакты</h2>
+            <p>Открыта к задачам в аналитике, 1С, бизнес-анализе, BI и автоматизации отчетности. Репозиторий можно смотреть как портфолио с готовыми артефактами и демонстрационными материалами.</p>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/comfe2436-web" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button secondary" href="mailto:comfe2436@gmail.com">Email</a>
+            <a class="button secondary" href="https://t.me/dru_zh" target="_blank" rel="noreferrer">Telegram</a>
+            <a class="button secondary" href="tel:+79851100175">Телефон</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      © 2026 Екатерина Дружинская. Портфолио построено на синтетических данных.
+    </div>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll(".filter");
+    const projects = document.querySelectorAll(".project");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+        projects.forEach((project) => {
+          const tags = project.dataset.tags.split(" ");
+          project.hidden = filter !== "all" && !tags.includes(filter);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
