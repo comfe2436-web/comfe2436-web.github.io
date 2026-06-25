@@ -239,8 +239,8 @@ function svgDiagram(title, nodes, edges) {
 
 async function main() {
   await fs.mkdir(bpmnDir, { recursive: true });
-  await fs.writeFile(path.join(bpmnDir, "as-is.drawio"), drawioDiagram("AS-IS process", 1680, 820, lanes, asIsNodes, asIsEdges));
-  await fs.writeFile(path.join(bpmnDir, "to-be.drawio"), drawioDiagram("TO-BE process", 1680, 820, lanes, toBeNodes, toBeEdges));
+  await fs.writeFile(path.join(bpmnDir, "as-is.drawio"), drawioDiagram("AS-IS процесс", 1680, 820, lanes, asIsNodes, asIsEdges));
+  await fs.writeFile(path.join(bpmnDir, "to-be.drawio"), drawioDiagram("TO-BE процесс", 1680, 820, lanes, toBeNodes, toBeEdges));
   await fs.writeFile(path.join(bpmnDir, "as-is.svg"), svgDiagram("AS-IS: текущий процесс обработки заявки", asIsNodes, asIsEdges));
   await fs.writeFile(path.join(bpmnDir, "to-be.svg"), svgDiagram("TO-BE: целевой процесс обработки заявки", toBeNodes, toBeEdges));
 }
