@@ -460,7 +460,7 @@ def svg_bar_chart(rows: list[dict[str, object]], label_key: str, value_key: str,
 
 
 def svg_line_chart(rows: list[dict[str, object]]) -> str:
-    x0, y0, width, height = 72, 585, 650, 185
+    x0, y0, width, height = 72, 1080, 650, 230
     values = [float(row["revenue"]) for row in rows]
     max_value = max(values)
     min_value = min(values)
@@ -508,28 +508,28 @@ def build_dashboard(results: dict[str, list[dict[str, object]]]) -> None:
             f'<text x="{x + 18}" y="{y + 62}" font-size="24" font-weight="750" fill="#1E3A5F">{value}</text>'
         )
 
-    category_svg = svg_bar_chart(categories, "category", "revenue", 220, 380, 360, "#2B6CB0")
-    receivables_svg = svg_bar_chart(receivables, "customer_name", "receivables", 850, 380, 260, "#C05621")
+    category_svg = svg_bar_chart(categories, "category", "revenue", 220, 385, 360, "#2B6CB0")
+    receivables_svg = svg_bar_chart(receivables, "customer_name", "receivables", 805, 385, 220, "#C05621")
     line_svg = svg_line_chart(monthly)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="820" viewBox="0 0 1180 820">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1180" viewBox="0 0 1180 1180">
 <style>
 text{{font-family:Inter,Segoe UI,Arial,sans-serif;letter-spacing:0}}
 </style>
-<rect width="1180" height="820" fill="#F8FAFC"/>
+<rect width="1180" height="1180" fill="#F8FAFC"/>
 <text x="54" y="56" font-size="28" font-weight="800" fill="#1E3A5F">SQL + BI дашборд продаж</text>
 <text x="54" y="80" font-size="14" fill="#64748B">Ключевые метрики продаж, маржинальности и дебиторской задолженности</text>
 {''.join(card_svg)}
 <text x="54" y="330" font-size="20" font-weight="750" fill="#1E3A5F">Выручка по категориям</text>
 {category_svg}
-<text x="670" y="330" font-size="20" font-weight="750" fill="#1E3A5F">Клиенты с задолженностью</text>
+<text x="650" y="330" font-size="20" font-weight="750" fill="#1E3A5F">Клиенты с задолженностью</text>
 {receivables_svg}
-<text x="54" y="535" font-size="20" font-weight="750" fill="#1E3A5F">Динамика выручки по месяцам</text>
+<text x="54" y="750" font-size="20" font-weight="750" fill="#1E3A5F">Динамика выручки по месяцам</text>
 {line_svg}
-<rect x="790" y="575" width="310" height="125" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
-<text x="815" y="615" font-size="15" fill="#64748B">Канал с максимальной выручкой</text>
-<text x="815" y="655" font-size="26" font-weight="750" fill="#1E3A5F">{top_channel}</text>
-<text x="815" y="686" font-size="13" fill="#64748B">Используется для приоритизации BI-отчета</text>
+<rect x="780" y="860" width="300" height="125" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+<text x="805" y="900" font-size="15" fill="#64748B">Канал с максимальной выручкой</text>
+<text x="805" y="940" font-size="26" font-weight="750" fill="#1E3A5F">{top_channel}</text>
+<text x="805" y="971" font-size="13" fill="#64748B">Для приоритизации BI-отчета</text>
 </svg>
 """
     (SCREENSHOTS / "dashboard.svg").write_text(svg, encoding="utf-8")
