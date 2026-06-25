@@ -133,7 +133,7 @@ const asIsEdges = [
   { from: "as-create-1c", to: "as-approve", start: "bottom", end: "top", points: [{ x: 950, y: 515 }, { x: 1185, y: 515 }] },
   { from: "as-approve", to: "as-gateway-approve" },
   { from: "as-gateway-approve", to: "as-rework", label: "Нет", start: "top", end: "right", points: [{ x: 1395, y: 500 }, { x: 1485, y: 500 }, { x: 1485, y: 335 }, { x: 1320, y: 335 }, { x: 1320, y: 285 }], labelAt: { x: 1500, y: 490 } },
-  { from: "as-rework", to: "as-check", start: "left", end: "right", points: [{ x: 1010, y: 285 }, { x: 1010, y: 345 }, { x: 640, y: 345 }] },
+  { from: "as-rework", to: "as-check", start: "left", end: "right", points: [{ x: 1010, y: 285 }, { x: 1010, y: 345 }, { x: 620, y: 345 }] },
   { from: "as-gateway-approve", to: "as-execute", label: "Да", start: "right", end: "top", points: [{ x: 1505, y: 590 }, { x: 1505, y: 680 }], labelAt: { x: 1520, y: 650 } },
   { from: "as-execute", to: "as-close", start: "left", end: "right" },
   { from: "as-close", to: "as-end", start: "left", end: "right" },
@@ -145,7 +145,7 @@ const toBeNodes = [
   { id: "to-gateway-valid", label: "Данные корректны?", style: gatewayStyle, x: 500, y: 395, width: 120, height: 90 },
   { id: "to-return", label: "Вернуть на дозаполнение", style: systemStyle, x: 500, y: 115, width: 180, height: 70 },
   { id: "to-create", label: "Создать заявку со статусом Новая", style: systemStyle, x: 680, y: 405, width: 190, height: 70 },
-  { id: "to-assign", label: "Назначить ответственного и SLA", style: systemStyle, x: 920, y: 405, width: 190, height: 70 },
+  { id: "to-assign", label: "Назначить ответственного и контрольный срок", style: systemStyle, x: 920, y: 405, width: 190, height: 70 },
   { id: "to-work", label: "Менеджер принимает в работу", style: taskStyle, x: 1220, y: 250, width: 180, height: 70 },
   { id: "to-gateway-approve", label: "Нужно согласование?", style: gatewayStyle, x: 1220, y: 545, width: 130, height: 90 },
   { id: "to-approve", label: "Руководитель согласует в 1С", style: taskStyle, x: 1460, y: 555, width: 170, height: 70 },
@@ -153,7 +153,7 @@ const toBeNodes = [
   { id: "to-close", label: "1С фиксирует закрытие и обновляет отчет", style: systemStyle, x: 1110, y: 700, width: 210, height: 60 },
   { id: "to-end", label: "Заявка закрыта", style: endStyle, x: 860, y: 700, width: 120, height: 60 },
   { id: "to-notify", label: "Уведомления о новых и просроченных заявках", style: systemStyle, x: 920, y: 535, width: 190, height: 70 },
-  { id: "to-report", label: "Отчет руководителя: статусы, SLA, ответственные", style: systemStyle, x: 700, y: 535, width: 190, height: 70 },
+  { id: "to-report", label: "Отчет руководителя: статусы, сроки, ответственные", style: systemStyle, x: 700, y: 535, width: 190, height: 70 },
 ];
 
 const toBeEdges = [
@@ -166,10 +166,10 @@ const toBeEdges = [
   { from: "to-assign", to: "to-work", start: "right", end: "left", points: [{ x: 1165, y: 440 }, { x: 1165, y: 285 }] },
   { from: "to-assign", to: "to-notify", start: "bottom", end: "top", points: [{ x: 1015, y: 505 }] },
   { from: "to-assign", to: "to-report", start: "bottom", end: "top", points: [{ x: 1015, y: 505 }, { x: 795, y: 505 }] },
-  { from: "to-work", to: "to-gateway-approve", start: "bottom", end: "top" },
+  { from: "to-work", to: "to-gateway-approve", start: "bottom", end: "top", points: [{ x: 1310, y: 420 }, { x: 1285, y: 420 }] },
   { from: "to-gateway-approve", to: "to-approve", label: "Да", labelAt: { x: 1400, y: 582 } },
   { from: "to-gateway-approve", to: "to-execute", label: "Нет", start: "right", end: "left", points: [{ x: 1365, y: 590 }, { x: 1365, y: 730 }], labelAt: { x: 1365, y: 718 } },
-  { from: "to-approve", to: "to-execute", start: "bottom", end: "top" },
+  { from: "to-approve", to: "to-execute", start: "bottom", end: "top", points: [{ x: 1545, y: 660 }, { x: 1520, y: 660 }] },
   { from: "to-execute", to: "to-close", start: "left", end: "right" },
   { from: "to-close", to: "to-end", start: "left", end: "right" },
 ];
@@ -214,10 +214,26 @@ function pointPath(points) {
   return points.map((point, idx) => `${idx === 0 ? "M" : "L"} ${point.x} ${point.y}`).join(" ");
 }
 
+function withoutDuplicatePoints(points) {
+  return points.filter((point, idx) => idx === 0 || point.x !== points[idx - 1].x || point.y !== points[idx - 1].y);
+}
+
+function orthogonalRoute(points) {
+  const routed = [points[0]];
+  for (const point of points.slice(1)) {
+    const last = routed[routed.length - 1];
+    if (last.x !== point.x && last.y !== point.y) {
+      routed.push({ x: point.x, y: last.y });
+    }
+    routed.push(point);
+  }
+  return withoutDuplicatePoints(routed);
+}
+
 function svgEdge(edge, nodes) {
   const from = nodes.find((node) => node.id === edge.from);
   const to = nodes.find((node) => node.id === edge.to);
-  const points = [anchor(from, edge.start), ...(edge.points || []), anchor(to, edge.end || "left")];
+  const points = orthogonalRoute([anchor(from, edge.start), ...(edge.points || []), anchor(to, edge.end || "left")]);
   const midPoint = points[Math.floor(points.length / 2)];
   const labelPoint = edge.labelAt || { x: midPoint.x, y: midPoint.y - 8 };
   const label = edge.label ? `<text x="${labelPoint.x}" y="${labelPoint.y}" text-anchor="middle" font-size="12" fill="${COLORS.navy}">${esc(edge.label)}</text>` : "";
@@ -239,10 +255,10 @@ function svgDiagram(title, nodes, edges) {
 
 async function main() {
   await fs.mkdir(bpmnDir, { recursive: true });
-  await fs.writeFile(path.join(bpmnDir, "as-is.drawio"), drawioDiagram("AS-IS процесс", 1680, 820, lanes, asIsNodes, asIsEdges));
-  await fs.writeFile(path.join(bpmnDir, "to-be.drawio"), drawioDiagram("TO-BE процесс", 1680, 820, lanes, toBeNodes, toBeEdges));
-  await fs.writeFile(path.join(bpmnDir, "as-is.svg"), svgDiagram("AS-IS: текущий процесс обработки заявки", asIsNodes, asIsEdges));
-  await fs.writeFile(path.join(bpmnDir, "to-be.svg"), svgDiagram("TO-BE: целевой процесс обработки заявки", toBeNodes, toBeEdges));
+  await fs.writeFile(path.join(bpmnDir, "as-is.drawio"), drawioDiagram("Текущий процесс", 1680, 820, lanes, asIsNodes, asIsEdges));
+  await fs.writeFile(path.join(bpmnDir, "to-be.drawio"), drawioDiagram("Целевой процесс", 1680, 820, lanes, toBeNodes, toBeEdges));
+  await fs.writeFile(path.join(bpmnDir, "as-is.svg"), svgDiagram("Текущий процесс обработки заявки", asIsNodes, asIsEdges));
+  await fs.writeFile(path.join(bpmnDir, "to-be.svg"), svgDiagram("Целевой процесс обработки заявки", toBeNodes, toBeEdges));
 }
 
 main().catch((error) => {
