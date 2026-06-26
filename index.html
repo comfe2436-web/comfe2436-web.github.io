@@ -200,7 +200,7 @@
       box-shadow: none;
     }
 
-    [data-theme-choice] {
+    .theme-switcher [data-theme-choice] {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -209,8 +209,12 @@
       line-height: 1;
     }
 
-    [data-theme-choice]::before {
+    .theme-switcher [data-theme-choice]::before {
       display: none;
+    }
+
+    .theme-switcher [data-theme-choice="dark"] {
+      font-size: 22px;
     }
 
     html.theme-shift body {
